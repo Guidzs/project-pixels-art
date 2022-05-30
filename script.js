@@ -4,12 +4,14 @@ let frameDimension = 5;
 const paleteColors = document.getElementsByClassName("color");
 const elements = document.getElementsByClassName("element")
 
-paleteColors[0].style.backgroundColor = 'black';
-paleteColors[1].style.backgroundColor = 'red';
-paleteColors[2].style.backgroundColor = 'pink';
-paleteColors[3].style.backgroundColor = 'green';
+
 
 window.onload = function () {
+
+paleteColors[0].style.backgroundColor = 'black';
+paleteColors[1].style.backgroundColor = generateRandomColor();
+paleteColors[2].style.backgroundColor = generateRandomColor();
+paleteColors[3].style.backgroundColor = generateRandomColor();
 
   function createButton(id, text, dsplay, fnct) {
     let button = document.createElement('button');
@@ -84,7 +86,9 @@ function clearFrame() {
 
 function sizeFrame() {
   let size = document.getElementById("board-size").value;
-  if (size < 5) {
+  if (size === "") {
+    alert("Board inválido!")
+  }else if (size < 5) {
     frameDimension = 5;
     removeFrame()
     createFrame();
@@ -97,4 +101,16 @@ function sizeFrame() {
     removeFrame()
     createFrame()
   }
+}
+
+// achei essa função no site 
+https://pt.code-paper.com/javascript/examples-random-color-code-js#:~:text=javascript%20gerar%20cor%20aleat%C3%B3ria%20const%20setBg%20%3D%20%28%29,randomColor%20%3D%20Math.floor%28Math.random%28%29%2A16777215%29.toString%2816%29%3B%20document.body.style.backgroundColor%20%3D%20%22%23%22%20%2B%20randomColor%3B
+
+function generateRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
