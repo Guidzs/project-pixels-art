@@ -32,7 +32,7 @@ paleteColors[3].style.backgroundColor = generateRandomColor();
     framePixels.insertAdjacentElement("beforebegin", input);
   }
 
-  createInput("board-size","","number","0","inline-block")
+  createInput("board-size","","number","1","inline-block")
   createButton("generate-board","VQV","inline-block",sizeFrame);
   createButton("clear-board","Limpar","block",clearFrame);
   createFrame();
