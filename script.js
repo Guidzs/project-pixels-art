@@ -36,7 +36,7 @@ function colorSeletor(event) {
 }
 
 function paint(event) {
-  let colorOfPalete = document.getElementsByClassName("selected");
+  let colorOfPalete = document.getElementsByClassName("selected")[0];
   let getCss = window.getComputedStyle(colorOfPalete);
   let colorBg = getCss.getPropertyValue("background-color");
 
