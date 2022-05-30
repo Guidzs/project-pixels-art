@@ -1,6 +1,7 @@
 const framePixels = document.getElementById("pixel-board");
 let frameDimension = [5, 5];
 const paleteColors = document.getElementsByClassName("color");
+const pixels = document.getElementsByClassName("pixel")
 
 paleteColors[0].style.backgroundColor = 'black';
 paleteColors[1].style.backgroundColor = 'red';
@@ -21,6 +22,15 @@ window.onload = function () {
       framePixels.appendChild(Break);
     }
   }
+
+  function createButton() {
+    let button = document.createElement('button')
+    button.id = "clear-board"
+    button.innerText = "Limpar"
+    button.addEventListener("click", clearFrame)
+    framePixels.insertAdjacentElement("beforebegin", button)
+  }
+  createButton();
   createFrame();
 
   for (let ind = 0; ind < paleteColors.length; ind += 1) {
@@ -41,4 +51,10 @@ function paint(event) {
   let colorBg = getCss.getPropertyValue("background-color");
 
   event.target.style.backgroundColor = colorBg;
+}
+
+function clearFrame() {
+  for (let pixel = 0; pixel < pixels.length; pixel += 1) {
+    pixels[pixel].style.backgroundColor = "white"
+  }
 }
