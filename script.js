@@ -22,16 +22,17 @@ paleteColors[3].style.backgroundColor = generateRandomColor();
     framePixels.insertAdjacentElement("beforebegin", button);
   }
 
-  function createInput(id, text, tp, dsplay) {
+  function createInput(id, text, tp, min, dsplay) {
     let input = document.createElement("input");
     input.id = id;
     input.innerText = text;
     input.type = tp;
+    input.min = min;
     input.style.display = dsplay;
     framePixels.insertAdjacentElement("beforebegin", input);
   }
 
-  createInput("board-size","","number","inline-block",)
+  createInput("board-size","","number","0","inline-block")
   createButton("generate-board","VQV","inline-block",sizeFrame);
   createButton("clear-board","Limpar","block",clearFrame);
   createFrame();
