@@ -7,9 +7,12 @@
 
 .pixel {
   display: inline-block;
-  margin: 0;
   border: solid 1px black;
   width: 40px;
   height: 40px;
   background-color: white;
+}
+
+#pixel-board {
+  font-size: 0;
 }
