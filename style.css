@@ -4,22 +4,10 @@
   width: 40px;
   height: 40px;
 }
-.box-black {
-  background-color: black;
-}
-.box-red {
-  background-color: red;
-}
-.box-pink {
-  background-color: pink;
-}
-.box-green {
-  background-color: green;
-}
+
 .pixel {
   display: inline-block;
   margin: 0;
-  margin-bottom: 0;
   border: solid 1px black;
   width: 40px;
   height: 40px;
